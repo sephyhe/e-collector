@@ -14,7 +14,7 @@ use SilverStripe\View\ArrayData;
 use SilverStripe\Control\HTTPRequest;
 use SilverStripe\Core\Config\Config;
 use Leochenftw\eCommerce\eCollector\Model\Freight;
-use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use Page;
 /**
  * Description
@@ -62,7 +62,7 @@ class CartController extends PageController
             $cart = eCollector::get_cart();
             $data['title'] = 'Shopping Cart';
             $data['cart'] = $cart ? $cart->Data : null;
-            $member = Member::currentUser();
+            $member = Security::getCurrentUser();
             $data['can_discount'] = $member && $member->can_discount();
         }
 

@@ -2,7 +2,7 @@
 
 namespace Leochenftw\eCommerce\eCollector\Model;
 use SilverStripe\ORM\DataObject;
-use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use Leochenftw\eCommerce\eCollector\Model\Order;
 use Leochenftw\eCommerce\eCollector\Extensions\ProductOrderItemCommonFields;
 use Leochenftw\Debugger;
@@ -61,7 +61,7 @@ class OrderItem extends DataObject
     public function populateDefaults()
     {
         $this->Quantity =   1;
-        if ($member = Member::currentUser()) {
+        if ($member = Security::getCurrentUser()) {
             if ($group = $member->Groups()->first()) {
                 if ($group->Discount()->exists()) {
                     $this->DiscountID   =   $group->DiscountID;

@@ -6,7 +6,7 @@ use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\ORM\DataObject;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\TextareaField;
-use SilverStripe\Security\Member;
+use SilverStripe\Security\Security;
 use Leochenftw\eCommerce\eCollector\Model\OrderItem;
 use Leochenftw\eCommerce\eCollector\Model\Customer;
 use Leochenftw\eCommerce\eCollector\Payment\Payment;
@@ -129,7 +129,7 @@ class Order extends DataObject
     public function populateDefaults()
     {
         $this->SameBilling  =   true;
-        $member             =   Member::currentUser();
+        $member             =   Security::getCurrentUser();
         $cookie             =   Cookie::get('eCollectorCookie');
         if (empty($cookie)) {
             $cookie =   session_id();
