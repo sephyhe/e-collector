@@ -23,8 +23,8 @@ class DPS
                             <AmountInput>' . $amount . '</AmountInput>
                             <CurrencyInput>' . $currency . '</CurrencyInput>
                             <MerchantReference>' . $ref . '</MerchantReference>
-                            <UrlSuccess>' . Director::absoluteBaseURL() . 'e-collector/dps-complete</UrlSuccess>
-                            <UrlFail>' . Director::absoluteBaseURL() . 'e-collector/dps-complete</UrlFail>
+                            <UrlSuccess>' . Director::absoluteBaseURL() . '/e-collector/dps-complete</UrlSuccess>
+                            <UrlFail>' . Director::absoluteBaseURL() . '/e-collector/dps-complete</UrlFail>
                         </GenerateRequest>';
 
         $ch         =   curl_init($endpoint);

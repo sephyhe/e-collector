@@ -19,8 +19,8 @@ class Paystation
         $params['pstn_am']  =   $amount * 100;
         $params['pstn_mr']  =   $ref;
         $params['pstn_ms']  =   sha1(mt_rand() . '-' . microtime(true) * 1000 . '-' . session_id());
-        $params['pstn_du']  =   Director::absoluteBaseURL() . 'e-collector/paystation-complete';
-        $params['pstn_dp']  =   Director::absoluteBaseURL() . 'e-collector/paystation-complete';
+        $params['pstn_du']  =   Director::absoluteBaseURL() . '/e-collector/paystation-complete';
+        $params['pstn_dp']  =   Director::absoluteBaseURL() . '/e-collector/paystation-complete';
         $params['pstn_cu']  =   Config::inst()->get('Leochenftw\eCommerce\eCollector', 'DefaultCurrency');
         $params['pstn_rf']  =   'JSON';
 

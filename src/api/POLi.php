@@ -16,7 +16,7 @@ class POLi
         $client_code        =   $settings['CLIENTCODE'];
         $auth_code          =   $settings['AUTHCODE'];
         $home               =   Config::inst()->get('Leochenftw\eCommerce\eCollector', 'MerchantSettings')['MerchantHomepageURL'];
-        $returnurl          =   Director::absoluteBaseURL() . 'e-collector/poli-complete';
+        $returnurl          =   Director::absoluteBaseURL() . '/e-collector/poli-complete';
 
         $json_builder       =   '{
                                     "Amount":"' . $amount . '",

@@ -382,7 +382,7 @@ class Order extends DataObject
             $this->extend('SendAdminEmail', $from, $to_admin, $str, $admin_sent_flag);
             if (!$admin_sent_flag['sent']) {
                 $admin_email    =   new Email($from, $to_admin, $siteconfig->TradingName . ': New order received (#' . $this->ID . ')');
-                $admin_email->setBody('Hi, <br /><br />There is a new order. Please <a target="_blank" href="' . Director::absoluteBaseURL() .  'admin/orders/Leochenftw-eCommerce-eCollector-Model-Order/EditForm/field/Leochenftw-eCommerce-eCollector-Model-Order/item/' . $this->ID . '/edit' . '">click here</a> to view the details. <br /><br />' . $siteconfig->TradingName);
+                $admin_email->setBody('Hi, <br /><br />There is a new order. Please <a target="_blank" href="' . Director::absoluteBaseURL() .  '/admin/orders/Leochenftw-eCommerce-eCollector-Model-Order/EditForm/field/Leochenftw-eCommerce-eCollector-Model-Order/item/' . $this->ID . '/edit' . '">click here</a> to view the details. <br /><br />' . $siteconfig->TradingName);
 
                 $admin_email->send();
             }
